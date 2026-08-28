@@ -1,29 +1,20 @@
-E.V. — Eternal Voice (Phase 1)
+E.V. — Eternal Voice (Phase 2)
 
-This repository contains the Phase 1 implementation for E.V. — a modular mobile-first AI assistant.
+Phase 2 Objective
+- Implement AIProvider abstraction and a LocalProvider stub.
+- Wire the LocalProvider into the AIBrain and EVApp bootstrap so the app uses the provider for intent classification and response generation.
 
-Phase 1 Objective
-- Create the core architecture, configuration system, database schema and minimal app bootstrap.
+What I changed / added
+- ai_provider package with base interface and local implementation
+- AIBrain updated to use AIProvider for classify/generate with fallbacks
+- app.py updated to initialize MemoryManager and LocalProvider and pass them into AIBrain
+- Basic pytest unit tests for the provider and ai_brain
 
-What I added in Phase 1
-- App bootstrap (main.py, app.py)
-- Central configuration and constants
-- Core AI brain stubs (ai_brain, intent engine, context manager)
-- SQLite database wrapper with migrations
-- History and memory database helpers
-- Memory manager API
-- Structured logger
-- buildozer.spec (minimal)
+How to run tests
+- Install pytest
+- Run: pytest tests/test_ai_provider.py tests/test_ai_brain.py
 
-How to run (development)
-- Install Python 3.10+ and Kivy/KivyMD per their docs.
-- From project root run: python main.py
-
-NOTE: Android platform integrations (camera, microphone, services) are not implemented in Phase 1 and are marked as PLATFORM IMPLEMENTATION REQUIRED.
-
-Next steps (Phase 2)
-- Implement AI provider abstraction
-- Replace rule-based intent engine with model-backed intent classifier
-- Add provider connectors (OpenAI/Anthropic/local)
-- Create initial UI screens (home/chat)
-
+Next steps (Phase 2 continuation)
+- Implement the home and chat UI screens and wire them to the EVApp
+- Add AIProvider adapters for OpenAI / Anthropic (optional plugins behind config)
+- Replace rule-based intent engine with a model-backed classifier (via provider) when available
