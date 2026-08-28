@@ -1,0 +1,16 @@
+"""
+Shared constants for UI, statuses and default values.
+"""
+
+# Colors (hex)
+BACKGROUND_COLOR = '#000000'
+ACCENT_CYAN = '#00E5FF'
+ACCENT_BLUE = '#00A8FF'
+ACCENT_GREEN = '#39FF14'
+
+# AI status
+STATUS_ONLINE = 'ONLINE'
+STATUS_OFFLINE = 'OFFLINE'
+STATUS_LISTENING = 'LISTENING'
+STATUS_THINKING = 'THINKING'
+

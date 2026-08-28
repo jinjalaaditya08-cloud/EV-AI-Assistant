@@ -1,0 +1,13 @@
+# Byte-compiled / env
+__pycache__/
+*.pyc
+
+# SQLite DB
+ev_data/
+
+# Build artifacts
+.bin/
+
+# IDE
+.vscode/
+.idea/
